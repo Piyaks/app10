@@ -2,9 +2,9 @@ package com.kh.app.web;
 
 import com.kh.app.domain.entity.Product;
 import com.kh.app.domain.product.svc.ProductSVC;
-import com.kh.app.web.form.DetailForm;
-import com.kh.app.web.form.SaveForm;
-import com.kh.app.web.form.UpdateForm;
+import com.kh.app.web.form.product.DetailForm;
+import com.kh.app.web.form.product.SaveForm;
+import com.kh.app.web.form.product.UpdateForm;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -166,7 +166,6 @@ public class ProductController {
   //목록
   @GetMapping
   public String findAll(Model model){
-
     List<Product> products = productSVC.findAll();
     model.addAttribute("products",products);
     if (products.size() == 0) {
